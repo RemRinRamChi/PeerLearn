@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>PeerLearn</title>
+    <meta name="description" content="This is a problem solving environment that emphasises on peer involvement."/>
+    <meta name="author" content="Yao Jian Yap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div id="top_nav">
+      <a id="nav_home">PeerLearn</a>
+      <a id="nav_user" style="float:right">Levi</a>
+    </div>
+
+    <div id="assignment">
+        <div id="left_wrapper">
+            <div id="left_nav" class="panel">
+                <h1>Navigation</h1>
+                <a id="nav_res"><pre> &#9758  </pre>Extra Resources</a><br>
+                <a id="nav_ans"><pre style="color:rgba(0,0,0,0);"> &#9758  </pre>Answer</a><br>
+            </div>
+            <button type="button" id="home_button"><pre>&#8592 </pre> Back to Home</button>
+        </div>&#8680
+
+        <div id="main_wrapper">
+            <section>
+                <div class="panel">
+                    <h1>Assignment 1</h1>
+                    <div class="question">
+                        <p><b>Read the problem and provide a solution along with a justification.</b></p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </div>
+                <div class="panel" id="extra_resources">
+                    <h1>Extra Resources</h1>
+                    <div class="question">
+                        <p><b>You might find the following resources helpful.</b></p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <button type="button" id="next_button">NEXT</button>
+                    </div>
+                </div>
+                <div class="panel" id="answer" style="display:none">
+                    <h1>Answer</h1>
+                    <div class="question">
+                        <h2>
+                            Solution
+                        </h2>
+                        <textarea id="solution" rows="6"></textarea>
+                        <h2>
+                            Justification
+                        </h2>
+                        <textarea id="justification" rows="4"></textarea>
+                        <button type="button" id="submit_button">SUBMIT</button>
+                        <button type="button" id="prev_button">PREV</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="right_wrapper">
+            <div id="right_nav" class="panel">
+                <h1 id="progress"> Progress (0/2) </h1>
+                <a id="indicate_solution"><pre> &#10004  </pre>Solution</a><br>
+                <a id="indicate_justification"><pre> &#10004  </pre>Justification</a><br>
+            </div>
+        </div>
+
+</div>
+</body>
+</html>

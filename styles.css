@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "PT Serif Bold";
+    src: url(PT_Serif-Web-Bold.ttf);
+}
+@font-face {
+    font-family: "PT Serif Reg";
+    src: url(PT_Serif-Web-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    font-family: "PT Serif Reg";
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
+    font-size: 1em;
+}
+
+h1 {
+    font-size: 1.25em;
+    font-weight: normal;
+    color: white;
+    background: #344073;
+    padding: 0.45em 0.8em;
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+pre{
+    display: inline-block;
+}
+
+button{
+    border: none;
+    padding: 0.5em 0.4em;
+    color: white;
+    background: #344073;
+    border-radius: 0.2em;
+    font-size: 0.9em;
+    margin-top: 0.35em;
+}
+
+.panel{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.2em;
+    border-color: #344073;
+    margin-bottom: 1em;
+    overflow: hidden;
+    width: 100%;
+}
+
+.panel textarea{
+    margin-top: 0.5em;
+    width: 99%;
+    font-size: 1.05em;
+    font-family: Arial;
+    resize: none;
+}
+
+.panel button{
+    float: right;
+    width:6em;
+}
+
+.panel button:nth-last-child(2){
+    margin-left: 0.4em;
+}
+
+.question{
+    overflow: hidden;
+    padding: 0.6em 1em 1em;
+}
+
+#top_nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #344073;
+}
+
+#top_nav a{
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 0.75em 5em;
+    font-size: 1.3em;
+    color: white;
+}
+
+#nav_home{
+    font-family: "PT Serif Bold";
+}
+
+#nav_user{
+    float: right;
+}
+
+#assignment{
+  margin-top: 4.4em;
+}
+
+#left_wrapper{
+    display: inline-block;
+    width: 15%;
+    margin-left: 5%;
+    margin-right: 3.45%;
+    position: fixed;
+}
+
+#main_wrapper{
+    display: inline-block;
+    margin-left: 21.45%; /*space taken by left wrapper*/
+    width: 50%;
+}
+
+#right_wrapper{
+    display: inline-block;
+    width: 20%;
+    margin-left: 2.55%;
+    margin-right: 5%;
+    position: fixed;
+}
+
+#left_nav, #right_nav{
+    padding-bottom: 0.7em;
+}
+
+#left_nav a{
+    float: left;
+    display: block;
+    padding: 0.5em 0.5em 0em;
+}
+
+#right_nav a{
+    float: left;
+    display: block;
+    margin-right: 2em;
+    padding: 0.5em 0.5em 0em;
+}
+
+#home_button{
+    width: 101%;
+    background: #344073;
+    color: white;
+}
+
+#solution{
+    margin-bottom: 0.3em;
+}
+
+#indicate_solution pre, #indicate_justification pre{
+    color: rgba(0, 0, 0, 0);
+}
