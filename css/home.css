@@ -27,14 +27,22 @@ pre{
 
 button{
     border: none;
-    padding: 0.5em 0.4em;
     color: white;
     background: #344073;
     border-radius: 0.2em;
-    font-size: 0.9em;
     cursor: pointer;
+}
+
+#main_button{
+    font-size: 0.9em;
+    padding: 0.5em 0.4em;
     height: 100%;
     width: 100%;
+}
+
+#peer_button{
+    margin-right: 1em;
+    padding: 0.3em 0.8em;
 }
 
 table, th, td{
@@ -49,6 +57,15 @@ th{
 
 td{
     padding: 0.8em 0.8em;
+}
+
+table tr:nth-child(2) td{
+    border-bottom: 0;
+}
+
+table tr:nth-child(3) td{
+    border-top: 0;
+
 }
 
 table, th:first-child, td:first-child{
@@ -72,6 +89,21 @@ table, th:last-child, td:last-child{
 
 .assignment_name{
     font-size: 1.35em;
+}
+
+#expand_peer{
+    padding-top: 0;
+    font-size: 1em;
+}
+
+#peers{
+    width: 97%;
+    margin: auto;
+    border-radius: 0.1em;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.4em 0.6em;
+    margin-top: 0.4em;
 }
 
 #current_assignments{
