@@ -153,6 +153,10 @@ button{
     color: white;
 }
 
+#submit_button a{
+    color: white;
+}
+
 #solution{
     margin-bottom: 0.3em;
 }
