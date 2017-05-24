@@ -126,11 +126,13 @@ $(document).ready(function(){
         $("#solution").val(sessionStorage.solution);
         $("#justification").val(sessionStorage.justification);
         populateFeedback("OWN");
+        $("#feedbacks > p:first-child").html("<b>Stella:</b> Good answer");
     } else if(sessionStorage.mode == "PEER"){
         setUpReviewEnvironment();
-        $("#solution").val("Lorem ipsum");
-        $("#justification").val("Laurel");
+        $("#solution").val("Strength training consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ");
+        $("#justification").val("Strength training duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.");
         populateFeedback("PEER");
+        $("#feedbacks > p:first-child").html("<b>Stella:</b> Constructive feedbacks welcomed");
     }
 
 });
