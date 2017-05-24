@@ -75,11 +75,6 @@ button{
     padding: 0.6em 1em 1em;
 }
 
-.feedback{
-    padding: 0.5em 0.7em;
-    border-bottom: 0.5px solid black;
-}
-
 #top_nav{
     position: fixed;
     top: 0;
@@ -166,6 +161,11 @@ button{
     color: rgba(0, 0, 0, 0);
 }
 
+#feedbacks p{
+    padding: 0.5em 0.7em;
+    border-bottom: 0.5px solid black;
+}
+
 #comment_box{
     width: 92%;
     margin-left: 2.8%;
@@ -178,5 +178,4 @@ button{
     margin-right: 3%;
     font-size: 0.75em;
     padding: 0.4em 0.4em;
-
 }

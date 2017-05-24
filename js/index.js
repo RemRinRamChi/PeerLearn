@@ -72,6 +72,11 @@ $(document).ready(function(){
         sessionStorage.mode="PEER";
     });
 
+    $("#comment_button").click(function(){
+        $("#feedbacks > p:last-child").after("<p> <b>Levi:</b> " + $("#comment_box").val() + "</p>");
+        $("#comment_box").val("");
+    });
+
     if(sessionStorage.mode == "OWN"){
         $("#right_nav").hide();
         $("#feedback_container").show();
@@ -80,4 +85,5 @@ $(document).ready(function(){
         toggleAnsSection();
         $("#solution, #justification").prop("readonly",true);
     }
+
 });
