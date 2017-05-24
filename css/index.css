@@ -58,7 +58,6 @@ button{
     margin-top: 0.5em;
     width: 99%;
     font-size: 1.05em;
-    font-family: Arial;
     resize: none;
 }
 
@@ -74,6 +73,11 @@ button{
 .question{
     overflow: hidden;
     padding: 0.6em 1em 1em;
+}
+
+.feedback{
+    padding: 0.5em 0.7em;
+    border-bottom: 0.5px solid black;
 }
 
 #top_nav{
@@ -160,4 +164,19 @@ button{
 
 #indicate_solution pre, #indicate_justification pre{
     color: rgba(0, 0, 0, 0);
+}
+
+#comment_box{
+    width: 92%;
+    margin-left: 2.8%;
+    margin-top: 0.7em;
+}
+
+#comment_button{
+    margin-top: 0.1em;
+    margin-bottom: 0.4em;
+    margin-right: 3%;
+    font-size: 0.75em;
+    padding: 0.4em 0.4em;
+
 }
