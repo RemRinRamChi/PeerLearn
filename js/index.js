@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+    // transitions to answer panel by showing answer panel and hiding extra resources panel
     function toggleAnsSection() {
         $("#extra_resources").hide();
         $("#answer").show();
@@ -7,6 +7,7 @@ $(document).ready(function(){
         $("#nav_ans > pre").css("color","black");
     }
 
+    // transitions to extra resources panel by showing extra resources panel and hiding answer panel
     function toggleResSection() {
         $("#answer").hide();
         $("#extra_resources").show();
@@ -14,6 +15,7 @@ $(document).ready(function(){
         $("#nav_res > pre").css("color","black");
     }
 
+    // updates the progress display in the head of the progress panel
     function updateProgress() {
         if(($("#indicate_solution > pre").css("color")=="rgb(0, 0, 0)")&&($("#indicate_justification > pre").css("color")=="rgb(0, 0, 0)")){
             $("#progress").html("Progress (2/2)");
@@ -24,6 +26,7 @@ $(document).ready(function(){
         }
     }
 
+    // switch to review mode by hiding progress panel and displaying feedback panel etc.
     function setUpReviewEnvironment(){
         $("#right_nav").hide();
         $("#feedback_container").show();
@@ -34,6 +37,7 @@ $(document).ready(function(){
         $("#home_button").click(function(){$("#finish_review_button").click();});
     }
 
+    // store user's provided feedbacks across pages
     function storeFeedback(feedback, feedbackType){
         var feedback_list;
         if(feedbackType === "OWN"){
@@ -47,6 +51,7 @@ $(document).ready(function(){
         }
     }
 
+    // populate feedback panel with stored user's feedbacks
     function populateFeedback(feedbackType){
         var feedback_list;
         if(feedbackType === "OWN"){
@@ -60,6 +65,7 @@ $(document).ready(function(){
 
     }
 
+    // initialise feedback storing arrays in session storage
     if(sessionStorage.ownFeedbacks===undefined){
         sessionStorage.ownFeedbacks=JSON.stringify([]);
     }
@@ -67,14 +73,17 @@ $(document).ready(function(){
         sessionStorage.peerFeedbacks=JSON.stringify([]);
     }
 
+    // transitions to answer panel from extra resources panel
     $("#next_button, #nav_ans").click(function(){
         toggleAnsSection();
     });
 
+    // transitions to extra resources panel from answer panel
     $("#prev_button, #nav_res").click(function(){
         toggleResSection();
     });
 
+    // detect text changes in answer text area to appropriately change progress
     $("#solution").on('change keyup paste', function() {
         var value = $(this).val();
         if(value.trim() === ""){
@@ -84,7 +93,6 @@ $(document).ready(function(){
         }
         updateProgress();
     });
-
     $("#justification").on('change keyup paste', function() {
         var value = $(this).val();
         if(value.trim() === ""){
@@ -95,6 +103,7 @@ $(document).ready(function(){
         updateProgress();
     });
 
+    // expand the option to review peers
     $("#expand_peer_button").click(function(){
         $("#peers").slideToggle();
         if($("#expand_peer > p").html() === "+ Peer Answers"){
@@ -104,10 +113,13 @@ $(document).ready(function(){
         }
     });
 
+    // store the submitted answers
     $("#submit_button").click(function(){
         sessionStorage.solution=$("#solution").val();
         sessionStorage.justification=$("#justification").val();
     });
+
+    // SET appropriate mode for system
     $("#own_button").click(function(){
         sessionStorage.mode="OWN";
     });
@@ -115,6 +127,7 @@ $(document).ready(function(){
         sessionStorage.mode="PEER";
     });
 
+    // publish user's provided feedbacks
     $("#comment_button").click(function(){
         var feedback = "<p> <b>Levi:</b> " + $("#comment_box").val() + "</p>";
         $("#feedbacks > p:last-child").after(feedback);
@@ -122,6 +135,7 @@ $(document).ready(function(){
         storeFeedback(feedback,sessionStorage.mode);
     });
 
+    // set up the reviewing environment
     if(sessionStorage.mode == "OWN"){
         setUpReviewEnvironment();
         $("#solution").val(sessionStorage.solution);
@@ -136,7 +150,9 @@ $(document).ready(function(){
         $("#feedbacks > p:first-child").html("<b>Stella:</b> Constructive feedbacks welcomed");
     }
 
+    // allow current date to be displayed in completed assignment entry
     var date = new Date();
-    $("#completed_date").html(date.getDate() + '/' +date.getMonth() + '/' + date.getFullYear());
+    var month = date.getMonth() + 1; // because it starts at 0
+    $("#completed_date").html(date.getDate() + '/' + month + '/' + date.getFullYear());
 
 });
