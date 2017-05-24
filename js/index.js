@@ -31,6 +31,7 @@ $(document).ready(function(){
         toggleAnsSection();
         $("#solution, #justification").prop("readonly",true);
         $("#submit_button").hide();
+        $("#home_button").click(function(){$("#finish_review_button").click();});
     }
 
     function storeFeedback(feedback, feedbackType){
@@ -137,4 +138,5 @@ $(document).ready(function(){
 
     var date = new Date();
     $("#completed_date").html(date.getDate() + '/' +date.getMonth() + '/' + date.getFullYear());
+
 });

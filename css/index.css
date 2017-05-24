@@ -70,7 +70,7 @@ button a{
     width:6em;
 }
 
-.panel button:nth-last-child(2){
+.question > a > button{
     margin-left: 0.4em;
 }
 
