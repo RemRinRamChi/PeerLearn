@@ -24,6 +24,15 @@ $(document).ready(function(){
         }
     }
 
+    function setUpReviewEnvironment(){
+        $("#right_nav").hide();
+        $("#feedback_container").show();
+        $("#finish_review_button").show();
+        toggleAnsSection();
+        $("#solution, #justification").prop("readonly",true);
+        $("#submit_button").hide();
+    }
+
     $("#next_button, #nav_ans").click(function(){
         toggleAnsSection();
     });
@@ -52,7 +61,7 @@ $(document).ready(function(){
         updateProgress();
     });
 
-    $("#expand_peer").click(function(){
+    $("#expand_peer_button").click(function(){
         $("#peers").slideToggle();
         if($("#expand_peer > p").html() === "+ Peer Answers"){
             $("#expand_peer > p").html("- Peer Answers");
@@ -78,14 +87,13 @@ $(document).ready(function(){
     });
 
     if(sessionStorage.mode == "OWN"){
-        $("#right_nav").hide();
-        $("#feedback_container").show();
-        $("#finish_review_button").show();
+        setUpReviewEnvironment();
         $("#solution").val(sessionStorage.solution);
         $("#justification").val(sessionStorage.justification);
-        toggleAnsSection();
-        $("#solution, #justification").prop("readonly",true);
-        $("#submit_button").hide();
+    } else if(sessionStorage.mode == "PEER"){
+        setUpReviewEnvironment();
+        $("#solution").val("Lorem ipsum");
+        $("#justification").val("Laurel");
     }
 
 });

@@ -98,6 +98,9 @@ table, th:last-child, td:last-child{
 #expand_peer{
     padding-top: 0;
     font-size: 1em;
+}
+
+#expand_peer_button{
     cursor: pointer;
 }
 
