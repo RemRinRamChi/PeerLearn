@@ -33,6 +33,39 @@ $(document).ready(function(){
         $("#submit_button").hide();
     }
 
+    function storeFeedback(feedback, feedbackType){
+        var feedback_list;
+        if(feedbackType === "OWN"){
+            feedback_list = JSON.parse(sessionStorage.ownFeedbacks);
+            feedback_list.push(feedback);
+            sessionStorage.ownFeedbacks = JSON.stringify(feedback_list);
+        } else if(feedbackType === "PEER"){
+            feedback_list = JSON.parse(sessionStorage.peerFeedbacks);
+            feedback_list.push(feedback);
+            sessionStorage.peerFeedbacks = JSON.stringify(feedback_list);
+        }
+    }
+
+    function populateFeedback(feedbackType){
+        var feedback_list;
+        if(feedbackType === "OWN"){
+            feedback_list = JSON.parse(sessionStorage.ownFeedbacks);
+        } else if(feedbackType === "PEER"){
+            feedback_list = JSON.parse(sessionStorage.peerFeedbacks);
+        }
+        for (i = 0; i < feedback_list.length; i++) {
+            $("#feedbacks > p:last-child").after(feedback_list[i]);
+        }
+
+    }
+
+    if(sessionStorage.ownFeedbacks===undefined){
+        sessionStorage.ownFeedbacks=JSON.stringify([]);
+    }
+    if(sessionStorage.peerFeedbacks===undefined){
+        sessionStorage.peerFeedbacks=JSON.stringify([]);
+    }
+
     $("#next_button, #nav_ans").click(function(){
         toggleAnsSection();
     });
@@ -82,18 +115,22 @@ $(document).ready(function(){
     });
 
     $("#comment_button").click(function(){
-        $("#feedbacks > p:last-child").after("<p> <b>Levi:</b> " + $("#comment_box").val() + "</p>");
+        var feedback = "<p> <b>Levi:</b> " + $("#comment_box").val() + "</p>";
+        $("#feedbacks > p:last-child").after(feedback);
         $("#comment_box").val("");
+        storeFeedback(feedback,sessionStorage.mode);
     });
 
     if(sessionStorage.mode == "OWN"){
         setUpReviewEnvironment();
         $("#solution").val(sessionStorage.solution);
         $("#justification").val(sessionStorage.justification);
+        populateFeedback("OWN");
     } else if(sessionStorage.mode == "PEER"){
         setUpReviewEnvironment();
         $("#solution").val("Lorem ipsum");
         $("#justification").val("Laurel");
+        populateFeedback("PEER");
     }
 
 });
