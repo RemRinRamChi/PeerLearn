@@ -80,10 +80,12 @@ $(document).ready(function(){
     if(sessionStorage.mode == "OWN"){
         $("#right_nav").hide();
         $("#feedback_container").show();
+        $("#finish_review_button").show();
         $("#solution").val(sessionStorage.solution);
         $("#justification").val(sessionStorage.justification);
         toggleAnsSection();
         $("#solution, #justification").prop("readonly",true);
+        $("#submit_button").hide();
     }
 
 });

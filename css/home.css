@@ -14,7 +14,6 @@
 
 a {
     text-decoration: none;
-    color: white;
 }
 
 h1 {
@@ -32,6 +31,10 @@ button{
     background: #344073;
     border-radius: 0.2em;
     cursor: pointer;
+}
+
+button a{
+    color: white;
 }
 
 #own_button{
