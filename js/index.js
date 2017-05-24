@@ -61,9 +61,23 @@ $(document).ready(function(){
         }
     });
 
+    $("#submit_button").click(function(){
+        sessionStorage.solution=$("#solution").val();
+        sessionStorage.justification=$("#justification").val();
+    });
     $("#own_button").click(function(){
-        window.location.href = "index.html";
+        sessionStorage.mode="OWN";
+    });
+    $("#peer_button").click(function(){
+        sessionStorage.mode="PEER";
+    });
+
+    if(sessionStorage.mode == "OWN"){
         $("#right_nav").hide();
         $("#feedback_container").show();
-    });
+        $("#solution").val(sessionStorage.solution);
+        $("#justification").val(sessionStorage.justification);
+        toggleAnsSection();
+        $("#solution, #justification").prop("readonly",true);
+    }
 });
