@@ -135,4 +135,6 @@ $(document).ready(function(){
         $("#feedbacks > p:first-child").html("<b>Stella:</b> Constructive feedbacks welcomed");
     }
 
+    var date = new Date();
+    $("#completed_date").html(date.getDate() + '/' +date.getMonth() + '/' + date.getFullYear());
 });
