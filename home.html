@@ -20,12 +20,25 @@
     </div>
     <div id="current_assignments" class="assignment_list">
         <h1>CURRENT ASSIGNMENTS</h1>
-        <p>You don't have any current assignments to start.</p>
+        <table style="width:100%" class="before_completion">
+          <tr>
+            <th width="10%"></th>
+            <th width="80%">Assignment Name</th>
+            <th width="10%">Due</th>
+          </tr>
+          <tr>
+            <td><a href="javascript:void(0);" onclick="javascript:window.location.href='index.html';"><button type="button" id="own_button">START</button></a></td>
+            <td class="assignment_name">Assignment 1: Strength Training Fundamentals</td>
+            <td id="due_date">26/6/17</td>
+          </tr>
+        </table>
+        <p class="after_completion">You don't have any current assignments to start.</p>
     </div>
     <br>
     <div class="assignment_list">
         <h1>COMPLETED ASSIGNMENTS</h1>
-        <table style="width:100%">
+        <p class="before_completion">You don't have any completed assignments.</p>
+        <table style="width:100%" class="after_completion">
           <tr>
             <th width="10%"></th>
             <th width="80%">Assignment Name</th>

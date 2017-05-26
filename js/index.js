@@ -153,6 +153,8 @@ $(document).ready(function(){
     // allow current date to be displayed in completed assignment entry
     var date = new Date();
     var month = date.getMonth() + 1; // because it starts at 0
+    var dueMonth = month + 1; 
+    $("#due_date").html(date.getDate() + '/' + dueMonth + '/' + date.getFullYear());
     $("#completed_date").html(date.getDate() + '/' + month + '/' + date.getFullYear());
 
 });
