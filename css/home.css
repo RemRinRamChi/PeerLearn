@@ -89,6 +89,7 @@ table, th:last-child, td:last-child{
     border-width: 1px;
     border-color: #344073;
     padding: 1em 2em;
+    background-color: rgb(252,252,252);
 }
 
 .assignment_name{
@@ -140,6 +141,7 @@ table, th:last-child, td:last-child{
 
 #nav_home{
     font-family: "PT Serif Bold";
+    cursor: pointer;
 }
 
 #nav_user{
