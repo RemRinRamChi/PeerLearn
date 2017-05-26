@@ -161,12 +161,18 @@ $(document).ready(function(){
     var date = new Date();
     var month = date.getMonth() + 1; // because it starts at 0
     var dueMonth = month + 1;
+
     if(sessionStorage.due_date === undefined){
         sessionStorage.due_date = date.getDate() + '/' + dueMonth + '/' + date.getFullYear() + ' at 23:59';
     }
     $("#due_date").html(sessionStorage.due_date);
+
     if(sessionStorage.completion_date === undefined){
-        sessionStorage.completion_date = date.getDate() + '/' + month + '/' + date.getFullYear() + ' at ' + date.getHours() + ':' + date.getMinutes();
+        var mins = date.getMinutes();
+        if(mins<10) {
+            mins='0'+mins;
+        }
+        sessionStorage.completion_date = date.getDate() + '/' + month + '/' + date.getFullYear() + ' at ' + date.getHours() + ':' + mins;
     }
     $("#completed_date").html(sessionStorage.completion_date);
 
