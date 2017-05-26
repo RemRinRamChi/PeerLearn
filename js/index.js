@@ -157,11 +157,17 @@ $(document).ready(function(){
         $("#feedbacks > p:first-child").html("<b>Stella:</b> Constructive feedbacks welcomed");
     }
 
-    // allow current date to be displayed in completed assignment entry
+    // allow appropriate date to be displayed in current and completed assignment entries
     var date = new Date();
     var month = date.getMonth() + 1; // because it starts at 0
     var dueMonth = month + 1;
-    $("#due_date").html(date.getDate() + '/' + dueMonth + '/' + date.getFullYear());
-    $("#completed_date").html(date.getDate() + '/' + month + '/' + date.getFullYear());
+    if(sessionStorage.due_date === undefined){
+        sessionStorage.due_date = date.getDate() + '/' + dueMonth + '/' + date.getFullYear() + ' at 23:59';
+    }
+    $("#due_date").html(sessionStorage.due_date);
+    if(sessionStorage.completion_date === undefined){
+        sessionStorage.completion_date = date.getDate() + '/' + month + '/' + date.getFullYear() + ' at ' + date.getHours() + ':' + date.getMinutes();
+    }
+    $("#completed_date").html(sessionStorage.completion_date);
 
 });
