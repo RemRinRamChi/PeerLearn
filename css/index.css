@@ -80,6 +80,21 @@ button a{
     padding: 0.6em 1em 1em;
 }
 
+.statement{
+    margin-bottom: 0.7em;
+}
+
+.youtube{
+    display: inline-block;
+    width: 49%;
+}
+
+.youtube_div{
+    display: inline-block;
+    padding: 0 0.5%;
+    width: 100%;
+}
+
 #top_nav{
     position: fixed;
     top: 0;
@@ -179,4 +194,10 @@ button a{
     margin-right: 3%;
     font-size: 0.8em;
     padding: 0.4em 0.4em;
+}
+
+#training_image{
+    width : 45%;
+    margin-right: 2%;
+    float:left;
 }
