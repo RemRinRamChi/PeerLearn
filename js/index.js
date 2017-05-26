@@ -115,6 +115,7 @@ $(document).ready(function(){
 
     // store the submitted answers
     $("#submit_button").click(function(){
+        sessionStorage.completed="TRUE";
         sessionStorage.solution=$("#solution").val();
         sessionStorage.justification=$("#justification").val();
     });
@@ -135,6 +136,12 @@ $(document).ready(function(){
         storeFeedback(feedback,sessionStorage.mode);
     });
 
+    // change home page states based on assignment's completion
+    if(sessionStorage.completed == "TRUE"){
+        $(".after_completion").show();
+        $(".before_completion").hide();
+    }
+
     // set up the reviewing environment
     if(sessionStorage.mode == "OWN"){
         setUpReviewEnvironment();
@@ -153,7 +160,7 @@ $(document).ready(function(){
     // allow current date to be displayed in completed assignment entry
     var date = new Date();
     var month = date.getMonth() + 1; // because it starts at 0
-    var dueMonth = month + 1; 
+    var dueMonth = month + 1;
     $("#due_date").html(date.getDate() + '/' + dueMonth + '/' + date.getFullYear());
     $("#completed_date").html(date.getDate() + '/' + month + '/' + date.getFullYear());
 

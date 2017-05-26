@@ -37,7 +37,7 @@ button a{
     color: white;
 }
 
-#own_button{
+#own_button, #start_button{
     font-size: 0.9em;
     padding: 0.5em 0.4em;
     height: 100%;
@@ -93,6 +93,10 @@ table, th:last-child, td:last-child{
 
 .assignment_name{
     font-size: 1.35em;
+}
+
+.after_completion{
+    display: none;
 }
 
 #expand_peer{
