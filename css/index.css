@@ -7,6 +7,21 @@
     src: url(PT_Serif-Web-Regular.ttf);
 }
 
+@font-face {
+    font-family: "Roboto Reg";
+    src: url(Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(Roboto-Regular.ttf);
+}
+
+textarea {
+    font-family: "Roboto Reg";
+    font-size: 1.05em;
+}
+
 *{
     margin: 0;
     font-family: "PT Serif Reg";
@@ -62,7 +77,6 @@ button a{
 .panel textarea{
     margin-top: 0.5em;
     width: 99%;
-    font-size: 1.05em;
     resize: none;
 }
 
@@ -180,6 +194,11 @@ button a{
 #feedbacks p{
     padding: 0.5em 0.7em;
     border-bottom: 0.5px solid black;
+    font-family: "Roboto Reg";
+}
+
+#feedbacks p > b{
+    font-family: "Roboto Bold";
 }
 
 #comment_box{
