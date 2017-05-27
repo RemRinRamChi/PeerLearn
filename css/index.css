@@ -127,13 +127,13 @@ button a{
     display: inline-block;
     width: 15%;
     margin-left: 5%;
-    margin-right: 3.45%;
+    margin-right: 2.5%;
     position: fixed;
 }
 
 #main_wrapper{
     display: inline-block;
-    margin-left: 21.45%; /*space taken by left wrapper*/
+    margin-left: 22.5%; /*space taken by left wrapper*/
     width: 50%;
 }
 
